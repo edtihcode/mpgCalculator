@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>My First Webpage </title>
+  <title>Cheaper gas station savings calculator </title>
   <meta name="description" content="Topic">
   <meta name="author" content=" Ed">
   <link rel="stylesheet" href="css/reset.css?v=1.0">
@@ -28,8 +28,6 @@
     <input type="text" id="gallon" placeholder="gallon"> </p>
     <p>Distance travelled from last fullfill
     <input type="text" id="miles" placeholder="miles"> </p>
-
-
   </form>
   <button onclick="add()"> Calculate </button>
   <button type="button" id="submit">CCalculate</button>
@@ -42,6 +40,33 @@
   <input type="text" id="result3" placeholder="range"> </p>
   <input id="result2" type= "text" />
   <script src="js/scripts.js"></script>
+
+  <div>
+    <form>
+      <h2>Price of gas $ per gallon at desired station:
+      <br>A<input type="text" id="gasPriceA" placeholder="gas price per gallon at Station A">
+      B<input type="text" id="gasPriceB" placeholder="gas price per gallon at Station B">
+      </h2>
+
+      <h2>Distance to Desired Station:
+      <br>A<input type="text" id="aDistance" placeholder="Distance to station A">
+      B<input type="text" id="bDistance" placeholder="Distance to station B">
+      </h2>
+
+      <h2>Cost to get there:
+      <br>A<input type="text" id="costToA" placeholder="Cost to station A">
+      B<input type="text" id="costToB" placeholder="Cost to station B">
+      </h2>
+
+      <p>
+      Gallons to Purchase:
+      <input type="text" id="gallonToPurchase" placeholder="gallons"> </p>
+      <button type="button" id="calculateSavings">Show me where to go</button>
+      <h2> Savings:
+      Station <input type="text" id="stationResults" placeholder="X"> will save you $ <input type="text" id="Savings" placeholder="$$">
+      </h2>
+    </form>
+  </div>
 </body>
 
 </html>
