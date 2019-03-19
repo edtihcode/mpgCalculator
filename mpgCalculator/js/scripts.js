@@ -51,6 +51,7 @@ function calDistancePerDollar(gasInputValue,gallonInput,distanceTravelled){
     console.log("ran");
   return distancePerDollar;
 }
+ New-branch
 
 
 
@@ -78,3 +79,4 @@ function calDistancePerDollar(gasInputValue,gallonInput,distanceTravelled){
             clearTimeout(id);
         };
 }());
+
