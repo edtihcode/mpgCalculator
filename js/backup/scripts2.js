@@ -34,60 +34,53 @@ $(document).ready(function() {
     var priceA= $("#gasPriceA").val();
     var priceB= $("#gasPriceB").val();
     var distanceA= $("#aDistance").val();
-    distanceA = parseInt(distanceA);
     var distanceB= $("#bDistance").val();
-    distanceB = parseInt(distanceB);
     var costA = $("#costToA").val();
     var costB = $("#costToB").val();
     var purchaseG = $("#gallonToPurchase").val();
 
-    costToGetToA = calCostToGetThere(distanceA,pricePerMileValue);
+    costToGetToA = calCostToGetThere(distanceA,costPerMile);
+    $("#costToA").val("$" + costToGetToA);
     purchaseA = purchaseValueG(priceA,purchaseG);
-    totalCostValueA = calTotalCostValue(purchaseA,costToGetToA);
-    $("#costToA").val("$" + totalCostValueA.toFixed(2));
-    costToGetToB = calCostToGetThere(distanceB,pricePerMileValue);
+    totalCostValueA = calTotalCostValue(purchaseValue,costValue);
+    costToGetToB = calCostToGetThere(distanceB,costPerMile);
+    $("#costToB").val("$" + costToGetToB);
     purchaseB = purchaseValueG(priceB,purchaseG);
-    totalCostValueB = calTotalCostValue(purchaseB,costToGetToB);
-    $("#costToB").val("$" + totalCostValueB.toFixed(2));
+    totalCostValueB = calTotalCostValue(purchaseValue,costValue);
     totalSavings = compare(totalCostValueA,totalCostValueB);
     console.log(totalCostValueA+ "for a");
     console.log(totalCostValueB+ "for b");
-    console.log(totalSavings.value + totalSavings.station);
-    $("#Results").html(`<h1>You will save $ ${totalSavings.value} by going to station ${totalSavings.station} </h1>`)
+    console.log(totalSavings);
+
 
     });
 
 });
 function calTotalCostValue(purchaseValue,costValue){
   totalCostValue = purchaseValue + costValue ;
-  console.log(totalCostValue,"totalcostvalue",purchaseValue,"purcahse V",costValue,"cost v");
   return totalCostValue;
 }
 
 function compare(a,b){
   if (a > b) {
-    console.log(a,b);
-    savings = a-b;
-    savings = savings.toFixed(2);
+    savings = a - b;
     var stationOfChoice = "B";
     var result = {value: savings, station: stationOfChoice};
-    return result;
+    var car = {type:"Fiat", model:"500", color:"white"};
+    return results;
   }else if (b > a) {
     savings = b - a;
-    savings = savings.toFixed(2);
     var stationOfChoice = "A";
     var result = {value: savings, station: stationOfChoice};
     return result;
   }else {
     var stationOfChoice = "No difference/cannot be computed";
-    $("#Results").html(`<h1> No difference/cannot be computed </h1>`);
   }
 
 }
 
 function purchaseValueG(price,purchaseG){
-  purchaseValue = parseFloat(price) * parseFloat(purchaseG);
-  console.log("price",price,"gallon",purchaseG,"total",purchaseValue);
+  purchaseValue = parseInt(price) * parseInt(purchaseG);
   return purchaseValue;
 }
 
@@ -102,25 +95,20 @@ function calMPG(gallonInput,distanceTravelled){
 function calDistancePerDollar(gasInputValue,gallonInput,distanceTravelled){
   distancePerDollarValue = (parseInt(distanceTravelled) / parseInt(gallonInput))/parseFloat(gasInputValue);
   distancePerDollar = distancePerDollarValue.toFixed(2) + " miles";
-     console.log(distancePerDollar,"distanceperdollar");
+    // console.log("ran");
   return distancePerDollar;
-
 }
 
-function calCostToGetThere(distance,pricePerMileValue){
-  //costValue = parseInt(distance) * parseInt(pricePerMileValue);
-  costValue = distance.toFixed(2) * pricePerMileValue.toFixed(2);
-  console.log(distance,"distance", pricePerMileValue, "price per mile value");
-  console.log(costValue);
-  //cost =  costValue;
-    console.log(costValue+ "for cost");
-  return costValue;
+function calCostToGetThere(distanceA,costPerMile){
+  costValue = parseInt(distanceA) * parseInt(pricePerMileValue);
+  cost =  costValue;
+    //console.log(cost);
+  return cost;
 }
 
 function calCostPerMile(gasInputValue,gallonInput,distanceTravelled){
-  pricePerMileValue = parseInt(gasInputValue)/ (parseInt(distanceTravelled) / parseInt(gallonInput));
-  console.log(pricePerMileValue, "price per mile");
+  pricePerMileValue = parseFloat(gasInputValue)/ (parseInt(distanceTravelled) / parseInt(gallonInput));
   costPerMile = "$" + pricePerMileValue.toFixed(2);
-    console.log("ran",costPerMile,pricePerMileValue);
+    console.log("ran");
   return costPerMile;
 }
