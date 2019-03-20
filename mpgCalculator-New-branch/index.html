@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Cheaper gas station savings calculator </title>
+  <meta name="description" content="Topic">
+  <meta name="author" content=" Ed">
+  <link rel="stylesheet" href="css/reset.css?v=1.0">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <!--for IE 9 insert the code bellow : -->
+  <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+      <![endif]-->
+
+
+</head>
+
+<body>
+  <div class="input">
+    <div class="anim-object active" id="box-object-light" style="animation: color-change-2x 2s linear 0s infinite alternate both running;">
+      <form>
+        <h2>Price of gas $
+          <input type="text" id="gasPrice" placeholder="gas price per gallon"> </h2>
+        <p>Gallon used from last fullfill
+          <input type="text" id="gallon" placeholder="gallon"> </p>
+        <p>Distance travelled from last fullfill
+          <input type="text" id="miles" placeholder="miles"> </p>
+
+      </form>
+
+      <button type="button" id="submit">Calculate</button>
+      <br>
+    </div>
+  </div>
+  <div class="input" class="anim-object active" id="box-object-light" style="animation: color-change-2x 2s linear 0s infinite alternate both running;">
+    <p>MPG =
+      <input type="text" id="result1" placeholder="miles"> </p>
+    <p>Cost per mile =
+      <input type="text" id="result2" placeholder="miles"> </p>
+    <p>Range per dollar =
+      <input type="text" id="result3" placeholder="range"> </p>
+    <input id="result2" type="text" />
+    <script src="js/scripts.js"></script>
+  </div>
+  <br>
+  <div>
+    <div class="input2" class="anim-object active" id="box-object-light" style="animation: color-change-2x 2s linear 0s infinite alternate both running;">
+      <form>
+        <h2>Price of gas $ per gallon at desired station:
+          <br>A<input type="text" id="gasPriceA" placeholder="gas price per gallon at Station A">
+          B<input type="text" id="gasPriceB" placeholder="gas price per gallon at Station B">
+        </h2>
+
+        <h2>Distance to Desired Station:
+          <br>A<input type="text" id="aDistance" placeholder="Distance to station A">
+          B<input type="text" id="bDistance" placeholder="Distance to station B">
+        </h2>
+
+        <h2>Cost to get there:
+          <br>A<input type="text" id="costToA" placeholder="Cost to station A">
+          B<input type="text" id="costToB" placeholder="Cost to station B">
+        </h2>
+
+        <p>
+          Gallons to Purchase:
+          <input type="text" id="gallonToPurchase" placeholder="gallons"> </p>
+        <button type="button" id="calculateSavings">Show me where to go</button>
+        <h2> Savings:
+          Station <input type="text" id="stationResults" placeholder="X"> will save you $ <input type="text" id="Savings" placeholder="$$">
+        </h2>
+      </form>
+    </div>
+  </div>
+  <div class="container">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+
+
+  <div class="container2">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+
+  <div class="container3">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+
+  <div class="container4">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+
+
+</body>
+
+</html>
